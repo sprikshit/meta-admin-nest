@@ -11,7 +11,7 @@ export class Userservice {
   constructor(
     @InjectModel('user') private readonly userModel: mongoose.Model<user>,
     @InjectModel('Pkg') private pkgsModel: mongoose.Model<Pkg>,
-    @InjectModel('userdetails')
+    @InjectModel('user_details')
     private userdetailsModel: mongoose.Model<userdetails>,
   ) {}
 
@@ -44,7 +44,7 @@ export class Userservice {
         },
       ]);
       // console.log(startDate);
-      // console.log(count);
+      console.log(count, 'count');
       return count.length > 0 ? count[0].count : 0;
     } catch (error) {
       console.log(error);
@@ -69,10 +69,7 @@ export class Userservice {
           $count: 'count',
         },
       ]);
-      console.log(
-        `Count of pro-power-matrix documents from ${startDate}:`,
-        count,
-      );
+      console.log( `Count of pro-power-matrix documents from ${startDate}:`, count );
       // return count[0].count;
       return count.length > 0 ? count[0].count : 0;
     } catch (error) {

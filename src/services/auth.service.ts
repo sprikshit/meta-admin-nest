@@ -13,9 +13,6 @@ import { IRegistration } from 'src/interface/register.if';
 import { Register } from 'src/schemas/register.schema';
 import { register } from 'module';
 import { ILogin } from 'src/interface/login.if';
-import JoiValidationPipe from 'src/validation/joi-validation.pipe';
-import { registerSchema } from 'src/validation/';
-// import { register } from 'module';
 
 @Injectable()
 export class AuthService {
@@ -26,7 +23,7 @@ export class AuthService {
   ) {}
 
   // Register function for creating a new user with a hashed password
-  // @UsePipes(new JoiValidationPipe(registerSchema))
+
   async register(signupData: IRegistration) {
     const { email, password, name } = signupData;
     console.log(signupData)
@@ -62,7 +59,4 @@ export class AuthService {
     };
   }
 
-  // async validateUser(userId: string) {
-  //   return this.UserModel.findById(userId);
-  // }
 }

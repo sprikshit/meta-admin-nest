@@ -36,4 +36,27 @@ export class earningService {
       return 0;
     }
   }
+
+  // async getTotalEarnings(){
+  //   try {
+  //     const earning = await this.earningModel.aggregate([
+  //       {
+  //         $match: { type: 'millionaire-royalty' },
+  //         },
+  //         {
+  //           $group: {
+  //             _id: null,
+  //             earning: { $sum: '$amount' },
+  //             },
+  //             },
+  //             {
+  //               $project: {
+  //                 _id: 0,
+  //                 earning: 1,
+  //                 },
+  //                 },      
+  //   } catch (error) {
+      
+  //   }
+  // }
 }

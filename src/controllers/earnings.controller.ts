@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { earningService } from 'src/services/earnings.service';
 import ResponseModel from 'src/utils/response.model';
 
-@Controller('earinigs')
+@Controller('earnings')
 export class earningController {
   constructor(private readonly earningService: earningService) {}
 

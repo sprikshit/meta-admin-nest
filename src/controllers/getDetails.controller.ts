@@ -1,16 +1,13 @@
 import {
   Controller,
   Get,
-  HttpException,
-  HttpStatus,
-  Param,
+ 
   Query,
-  UseGuards,
 } from '@nestjs/common';
 import { Userservice } from '../services/getDetails.service';
 import ResponseModel, { IResponse } from 'src/utils/response.model';
-import { AuthGuard } from '@nestjs/passport';
-import { JwtAuthGuard } from 'src/middleware/jwt-auth.guard';
+// import { AuthGuard } from '@nestjs/passport';
+// import { JwtAuthGuard } from 'src/middleware/jwt-auth.guard';
 
 
 @Controller('users')
@@ -24,11 +21,7 @@ export class UserController {
       const response = await this.userservice.getAllUsersCount();
       return ResponseModel.setSuccess(200, 'successful', { response });
     } catch (error) {
-      return ResponseModel.setError(
-        500,
-        'Failed to fetch user count',
-        error.message,
-      );
+      return ResponseModel.setError( 500, 'Failed to fetch user count',error.message, );
     }
   }
 

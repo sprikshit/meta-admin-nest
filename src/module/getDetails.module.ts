@@ -16,7 +16,7 @@ import { UserdetailsSchema } from "src/schemas/userdetails.schema";
       MongooseModule.forFeature([
         { name: user.name, schema: userSchema },
         { name: 'Pkg', schema: PkgSchema },
-        { name: 'userdetails', schema: UserdetailsSchema },
+        { name: 'user_details', schema: UserdetailsSchema },
       ]),
       AuthModule,
     ],

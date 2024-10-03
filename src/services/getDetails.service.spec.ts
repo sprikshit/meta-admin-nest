@@ -44,7 +44,7 @@ describe('Userservice', () => {
           useValue: pkgsModel,
         },
         {
-          provide: getModelToken('userdetails'),
+          provide: getModelToken('user_details'),
           useValue: userdetailsModel,
         },
       ],
